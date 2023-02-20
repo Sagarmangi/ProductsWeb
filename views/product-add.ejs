@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+
+<!-- NAVBAR -->
+<form action="/addproduct" method="post">
+
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <div class="container-fluid">
+      <a class="navbar-brand h1">Product Add</a>
+      <div class="">
+        <button class="btn btn-outline-dark my-2 my-sm-0 navbutton" type="submit" name="Save" id="Save">Save</button>
+        <a class="btn btn-outline-dark my-2 my-sm-0 navbutton" href="/">Cancel</a>
+      </div>
+    </div>
+  </nav>
+  <hr class="hr">
+
+  <!-- FORM FIELDS -->
+  <div class="container-fluid">
+    <label class="col-auto col-form-label">SKU:</label>
+    <input type="text" name="sku" value="" required> <br>
+
+    <label class="col-auto col-form-label">Name:</label>
+    <input type="text" name="name" value="" required> <br>
+
+    <label class="col-auto col-form-label">Price:</label>
+    <input type="number" name="price" value="" required> <br> <br> <br>
+
+    <!-- PRODUCT TYPE SELECTOR -->
+    <label class="col-auto col-form-label">Product Type</label>
+    <select id="type" name="type" class="form-select form-select-lg mb-3" required>
+      <option selected disabled value></option>
+      <option value="dvd">DVD</option>
+      <option value="furniture">furniture</option>
+      <option value="book">book</option>
+    </select>
+
+    <!-- DVD PRODUCT TYPE -->
+    <div id="dvd" style="display: none;">
+      <label class="col-auto col-form-label">Size (MB)</label>
+      <input id="size" type="number" name="size" value="">
+    </div>
+
+    <!-- FURNITURE PRODUCT TYPE -->
+    <div id="furniture" style="display: none;">
+      <label class="col-auto col-form-label">Height (CM)</label>
+      <input class="furnitureAtt" id="height" type="number" name="height" value=""><br>
+      <label class="col-auto col-form-label">Width (CM)</label>
+      <input class="furnitureAtt" id="width" type="number" name="width" value=""><br>
+      <label class="col-auto col-form-label">Length (CM)</label>
+      <input class="furnitureAtt" id="length" type="number" name="length" value="">
+    </div>
+
+    <!-- BOOK PRODUCT TYPE -->
+    <div id="book" style="display: none;">
+      <label class="col-auto col-form-label">Weight (KG)</label>
+      <input id="weight" type="number" name="weight" value="">
+    </div>
+
+  </div>
+
+</form>
+
+<%- include('partials/footer') %>

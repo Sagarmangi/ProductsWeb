@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.use(express.static("app"));
 app.set("view engine", "ejs");
 mongoose.set("strictQuery", false);
-mongoose.connect("mongodb://localhost:27017/productsDB", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB, {useNewUrlParser: true});
 
 
 const productsSchema = new mongoose.Schema({
